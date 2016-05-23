@@ -18,7 +18,7 @@ function printInventory(inputs) {
 
     var Output = "***<没钱赚商店>购物清单***\n";
     for (i in Goods){
-       Output += "名称："+Goods[i].name+"，数量："+Goods[i].number+Goods[i].unit+"，单价："+Goods[i].price.toFixed(2)+"(元)，小计："+(Goods[i].number*Goods[i].price).toFixed(2)+"(元)\n";
+        Output += "名称："+Goods[i].name+"，数量："+Goods[i].number+Goods[i].unit+"，单价："+Goods[i].price.toFixed(2)+"(元)，小计："+(Goods[i].number*Goods[i].price).toFixed(2)+"(元)\n";
         Total += Goods[i].number*Goods[i].price;
     }
 
