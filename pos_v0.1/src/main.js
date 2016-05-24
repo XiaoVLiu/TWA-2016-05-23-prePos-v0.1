@@ -1,14 +1,14 @@
 //TODO: Please write code in this file.
 function printInventory(inputs) {
-    var Goods = new Array();
-    var Total = 0.0;
+    var Goods = [];
+    var Total = 0;
 
     for (var i=0; i<inputs.length; i++){
         if (Goods[inputs[i].barcode]){
             Goods[inputs[i].barcode].number++;
         }
         else{
-            Goods[inputs[i].barcode] = new Object();
+            Goods[inputs[i].barcode] = {};
             Goods[inputs[i].barcode].name = inputs[i].name;
             Goods[inputs[i].barcode].unit = inputs[i].unit;
             Goods[inputs[i].barcode].price = inputs[i].price;
