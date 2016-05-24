@@ -1,16 +1,7 @@
 function printInventory(inputs) {
     var Goods = parseGoods(inputs);
-    var Total = 0;
 
-    var Output = "***<没钱赚商店>购物清单***\n";
-    for (i in Goods){
-        Output += "名称："+Goods[i].name+"，数量："+Goods[i].count+Goods[i].unit+"，单价："+Goods[i].price.toFixed(2)+"(元)，小计："+(Goods[i].count*Goods[i].price).toFixed(2)+"(元)\n";
-        Total += Goods[i].count*Goods[i].price;
-    }
-
-    Output +=  '----------------------\n' + "总计："+Total.toFixed(2)+"(元)\n" + '**********************';
-
-    console.log(Output);
+    console.log(stringfyGoods(Goods));
 }
 
 function parseGoods(inputs){
@@ -39,4 +30,17 @@ function parseGoodItem(barcode){
         }
     })
     return GoodItem;
+}
+
+function stringfyGoods(Goods){
+    var Total = 0;
+    var Output = "***<没钱赚商店>购物清单***\n";
+
+    for (i in Goods){
+        Output += "名称："+Goods[i].name+"，数量："+Goods[i].count+Goods[i].unit+"，单价："+Goods[i].price.toFixed(2)+"(元)，小计："+(Goods[i].count*Goods[i].price).toFixed(2)+"(元)\n";
+        Total += Goods[i].count*Goods[i].price;
+    }
+
+    Output +=  "----------------------\n" + "总计："+Total.toFixed(2)+"(元)\n" + "**********************";
+    return Output;
 }
